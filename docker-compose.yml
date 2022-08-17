@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres
+    image: postgres:14.5
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -11,5 +11,11 @@ services:
     build: .
     ports:
       - "3000:3000"
+    environment:
+      RAILS_DB_HOST: postgres
+      RAILS_DB_USER: postgres
+      RAILS_ENV: production
+      RAILS_DB_PASSWORD: password
     restart: unless-stopped
-    depends_on: postgres
+    depends_on: 
+     - postgres
