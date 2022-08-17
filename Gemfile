@@ -8,10 +8,12 @@ gem "pg", "1.4.3"
 gem "puma", "5.6.4"
 gem "rails", "7.0.3.1"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "rswag", "2.5.1"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "rspec-rails", "5.1.2"
 end
 
 group :development do
