@@ -160,15 +160,15 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
-  bootsnap
+  bootsnap (= 1.13.0)
   debug
-  pg (~> 1.1)
-  puma (~> 5.0)
-  rails (~> 7.0.3, >= 7.0.3.1)
+  pg (= 1.4.3)
+  puma (= 5.6.4)
+  rails (= 7.0.3.1)
   tzinfo-data
 
 RUBY VERSION
    ruby 3.1.0p0
 
 BUNDLED WITH
-   2.3.4
+   2.3.3
