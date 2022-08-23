@@ -2,17 +2,19 @@ Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
 
-  get 'promo/assing_product'
-  get 'promo/unassing_product'
-  get 'promo/index'
+  resources 'promo', only: [:index] do
+    get 'assing_product'
+    get 'unassing_product'
+  end
 
-  get 'cart/index'
-  get 'cart/add_to_cart'
-  get 'cart/remove_from_cart'
+  resources 'cart', only: [:index] do
+    get 'add_to_cart'
+    get 'remove_from_cart'
+  end
 
   resources 'products' do
-    get 'products/seed'
-    get 'products/resead'
+    get 'seed'
+    get 'resead'
   end
 
 end
