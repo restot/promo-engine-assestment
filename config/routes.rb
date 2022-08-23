@@ -13,7 +13,6 @@ Rails.application.routes.draw do
       resources 'cart', only: [:index]
 
       get 'products/seed/:id', to: 'products#seed'
-      get 'products/resead', to: 'products#resead'
       resources 'products'
     end
   end
