@@ -1,6 +1,20 @@
 class CartController < ApplicationController
   def index
-    render json: Cart.all.to_a.map { |e| e.attributes }
+    response = []
+    price = 0
+    data = Cart.all.to_a.map! do |e|
+      price += e.product.price
+      e.attributes.merge!(product: e.product.attributes)
+    end
+    info = {
+      message: "Cart content",
+      price: price,
+      price_after_discount: 0,
+      promotions_applied: nil
+    }
+    response << info
+    response << data
+    render json: response
   end
 
   def add_to_cart
