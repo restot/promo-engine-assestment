@@ -7,4 +7,4 @@
 
 * System dependencies: postgresql 
 
-
+The idea was create MVP 
